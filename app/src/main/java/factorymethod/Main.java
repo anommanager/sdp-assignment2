@@ -21,9 +21,12 @@ public class Main {
     System.out.print("choose a stage [build, package, test]: ");
     Scanner scanner = new Scanner(System.in);
     if (scanner.hasNextLine()) {
-      return scanner.nextLine().trim();
+      String res = scanner.nextLine();
+      scanner.close();
+      return res.trim();
     }
 
+    scanner.close();
     System.out.println("no input provided");
     return "test";
   }
