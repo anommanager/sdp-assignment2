@@ -1,4 +1,4 @@
-# Assignment 2 — Factory Method & Abstract Factory
+# Assignment 2 - Factory Method & Abstract Factory
 
 ## Theme
 
@@ -55,7 +55,7 @@ Part B introduces an entire set of tools for a particular tech stack.
                         └── TestStep.java
 ```
 
-## Part A — Factory Method
+## Part A - Factory Method
 
 The product is a build step.
 
@@ -69,14 +69,14 @@ Pipeline stage runner class PipelineStageRunner contains the factory method crea
 ### Pattern's UML Diagram
 ![factorymethod](images/factorymethod.png)
 
-## Part B — Abstract Factory
+## Part B - Abstract Factory
 
 The family is a toolchain for one tech stack.
 
-- **AbstractProduct** — `Compiler`, `Deployer`, `TestRunner`
-- **AbstractFactory** — `CiFactory`
-- **ConcreteFactory** — `JavaCiFactory`, `PythonCiFactory`
-- **Client** — `PipelineOrchestrator`
+- **AbstractProduct** - `Compiler`, `Deployer`, `TestRunner`
+- **AbstractFactory** - `CiFactory`
+- **ConcreteFactory** - `JavaCiFactory`, `PythonCiFactory`
+- **Client** - `PipelineOrchestrator`
 
 The Java family uses javac to make a .jar file. They test with JUnit, and deploy with mvn deploy to Nexus. 
 The Python family uses mypy + bytecode to make a .whl file, tested with pytest, and deployed with twine to PyPI. 
@@ -93,9 +93,9 @@ The Factory Method pattern uses inheritance to implement the createStep(), while
 
 ## SOLID
 
-OCP — A new stack needs a new factory and one line in `Main`. `PipelineOrchestrator` does not change. 
-SRP — the factory knows what the stack is composed of. The orchestrator knows the order of the calls. 
-DIP — the clients depend on interfaces, not on the concrete classes.
+OCP - A new stack needs a new factory and one line in `Main`. `PipelineOrchestrator` does not change. 
+SRP - the factory knows what the stack is composed of. The orchestrator knows the order of the calls. 
+DIP - the clients depend on interfaces, not on the concrete classes.
 
 ## Drawback
 
